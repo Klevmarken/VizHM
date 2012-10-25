@@ -1,0 +1,15 @@
+# app config
+[ui]
+is_visible = true
+label = Splunk Heat Map Application
+
+# splunkbase packaging requirements
+[package]
+id = SplunkVizHM
+
+# descriptions
+[launcher]
+author = Splunk, Inc.
+description = Splunk Heat Map Application
+version = 1.0
+

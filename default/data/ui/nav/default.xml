@@ -1,0 +1,5 @@
+<nav>
+  <collection label="SplunkVizHM">
+    <view name="SplunkVizHM" />
+  </collection> 
+</nav>

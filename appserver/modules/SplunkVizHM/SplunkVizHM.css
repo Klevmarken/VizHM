@@ -1,0 +1,24 @@
+.SplunkVizHM {
+    clear:both;
+    padding:0px;
+    _padding:0px 5px;
+}
+.SplunkVizHM .SplunkVizHMWrapper {
+	overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0px 10px;
+    _padding: 0px;
+    _width:100%;
+    *position:relative;
+}
+.SplunkVizHM table.CustomResultsTable {
+    white-space:nowrap;   
+}
+.SplunkVizHM table.SplunkVizHM td.pos,
+.SplunkVizHM table.SplunkVizHM th.pos {
+    padding: 3px 10px 5px 5px;
+    width: 15px;
+}
+.SplunkVizHM splMenu ul {
+    margin-top: -2px
+}
