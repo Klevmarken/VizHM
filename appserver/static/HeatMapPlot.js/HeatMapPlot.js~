@@ -209,7 +209,7 @@ var HeatMapPlot =  {
         var maxClusterValue = this.getMaxValue(clusterData);
 
 
-        for(var key=0; key<clusters; key++) {
+        for(var key in clusterData) {
             var color = this.getColorFromValue(clusterData[key]['value'], maxClusterValue);
 
             // we need a unique id so that the box easily can become clickable
@@ -408,7 +408,7 @@ var RandomLatencyDataGenerator = function(numberOfColumns, numberOfClusters) {
           }
 
         for(var i=from; i<to;i++) {
-            var dataValue = parseInt(this.data[i]["value"]);
+            var dataValue = this.data[i]["value"];
 
             if(dataValue <= min)
                 min = dataValue;
@@ -422,7 +422,7 @@ var RandomLatencyDataGenerator = function(numberOfColumns, numberOfClusters) {
         var max = 0;
 
         for(var i=0; i<this.data.length;i++) {
-            var dataValue = parseInt(this.data[i]["value"]);
+            var dataValue = this.data[i]["value"];
 
             if(dataValue >= max)
                 max = dataValue;
@@ -491,7 +491,7 @@ var RandomLatencyDataGenerator = function(numberOfColumns, numberOfClusters) {
         var intervalFrom = this.getMinimumDataValue(0,this.data.length);
         var intervalSize = this.getClusterIntervalSize();
         
-        for(var idx=0; idx<this.data.length;idx++)
+        for(var idx in this.data)
         {
             var indexInSkeleton = Math.floor((this.getTimeInMillis(this.data[idx]["key"]) - parseInt(skeleton[0]["key"]))/this.columnInterval);
 
@@ -592,7 +592,7 @@ var RandomLatencyDataGenerator = function(numberOfColumns, numberOfClusters) {
 //var result = DataColumnParser.createSkeleton();
 //result = DataColumnParser.fillSkeleton(result);
 //var text = "[";
-/*for(key in result)
+for(key in result)
 {
     text += "\n\t{'key': '"+result[key]['key']+"', 'data': [";
 
@@ -611,7 +611,7 @@ var RandomLatencyDataGenerator = function(numberOfColumns, numberOfClusters) {
     }
     text += "]}";
 }
-text += "\n]";*/
+text += "\n]";
 //console.log(text);
 // Input DataClusterParser.init(testData,2, 1)
 // 

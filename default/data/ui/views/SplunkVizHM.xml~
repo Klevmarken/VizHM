@@ -9,7 +9,7 @@
   </module>
 
   <module name="HiddenSearch" layoutPanel="panel_row2_col1" group="CPU Utilization" autoRun="True">
-    <param name="search">index=_internal source=*metrics.log group=pipeline | convert mktime(_time) as unixtime | eval time=strftime(_time, "%Y-%m-%d %H:%M:%S.%3N") | table unixtime time processor cumulative_hits</param>
+    <param name="search">index=_internal source=*metrics.log group=pipeline | convert mktime(_time) as unixtime | eval time=strftime(_time, "%Y-%m-%d %H:%M:%S.%3N") | table unixtime time processor cumulative_hits | sort time</param>
     <param name="earliest">-7d</param>
     <module name="SplunkVizHM"></module>
   </module>

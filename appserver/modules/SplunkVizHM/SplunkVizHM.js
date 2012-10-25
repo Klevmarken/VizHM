@@ -29,14 +29,13 @@ Splunk.Module.SplunkVizHM = $.klass(Splunk.Module.DispatchingModule, {
     renderResults: function($super, data) {
         if (!data) {            
             return;
-            this.logger.info(this.moduleType, "No data in renderResults");
         }
-        this.logger.info(this.moduleType, "Data in renderResults");
-        this.resultsContainer.html(htmlFragment);
+        //this.logger.info(this.moduleType, "Data in renderResults");
+        //this.resultsContainer.html(data);
         $("document").ready(function() {
         	HeatMapPlot.init($("#plotWrapper"));
         	HeatMapPlot.startPlot();
-        	DataColumnParser.init(Data,50,1000);
+        	DataColumnParser.init(data,10,10000);
         	HeatMapPlot.retrieveData = function() { return DataColumnParser.fillSkeleton(DataColumnParser.createSkeleton()) };
         });
     }
