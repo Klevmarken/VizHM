@@ -10,7 +10,7 @@
             $("#stepLeft").click(stepLeftButtonClicked);
             $("#stepRight").click(stepRightButtonClicked);
 
-           
+            });
 
             HeatMapPlot.clusterBoxClicked = function(clusterBoxObject) {
                 $("#infoBox").text("You pressed a box with value: "+clusterBoxObject.innerHTML);
@@ -45,7 +45,6 @@
                 HeatMapPlot.changePlotTickerTime(-100);
                 $("#speedIndicator").text(Math.round(HeatMapPlot.defaultSpeed*100/HeatMapPlot.currentIntervalSpeed)/100+"x");
             }
-     });
     </SCRIPT>
     
      <STYLE type="text/css">
